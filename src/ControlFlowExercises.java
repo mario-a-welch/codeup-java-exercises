@@ -6,11 +6,23 @@ public class ControlFlowExercises {
 //            System.out.print(i + " ");
 //            i++;
 //        }
+
 //1. Loop Basics - b. Do while
-        int num = 0;
-        do {
+//        int num = 0;
+//        do {
+//            System.out.println(num);
+//            num += 2;
+//        } while (num <= 100);
+// Iterates from 0 - 100 by 2
+
+// 2nd part of b. Do while
+        int num = 100;
+         do {
             System.out.println(num);
-            num += 2;
-        } while (num <= 100);
+            num -= 5;
+        } while (num >= -10);
+//Iterates from 100 - (-10) by 5
+
+
     }
 }
