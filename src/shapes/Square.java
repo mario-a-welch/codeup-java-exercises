@@ -11,10 +11,12 @@ public class Square extends Rectangle{
     }
     //Overrides previous getArea and getPerimeter methods
     public double getArea(){
+        System.out.println("Override Rectangle getArea()");
         return this.side * this.side;
     }
 
     public double getPerimeter(){
+        System.out.println("Override Rectangle getPerimeter()");
         return this.side * 4;
     }
 }
