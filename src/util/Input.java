@@ -14,9 +14,9 @@ public class Input {
     //Class will have the following methods, which all will return command line input from the user
     //String getString(), boolean yesNo(), int getInt(int min, int max), int getInt(), double getDouble(double min, double max), double getDouble()
     public String getString(){
-        System.out.println("Enter Something: ");
+//        System.out.println("Enter Something: ");
         String userInput =  scanner.nextLine();
-        System.out.printf("You entered: %s", userInput);
+//        System.out.printf("You entered: %s %n", userInput);
         return userInput;
     }
 
@@ -35,11 +35,22 @@ public class Input {
         }
     }
 
+//    public int getInt(){
+//        System.out.println("Enter a whole number: ");
+//        int userInput = scanner.nextInt();
+//        System.out.printf("You entered %d: ", userInput);
+//        return userInput;
+//    }
+
     public int getInt(){
-        System.out.println("Enter a whole number: ");
-        int userInput = scanner.nextInt();
-        System.out.printf("You entered %d: ", userInput);
-        return userInput;
+        System.out.println("Enter a Integer: ");
+        try{
+            return Integer.valueOf(this.getString());
+        } catch(NumberFormatException nfe){
+//            nfe.printStackTrace();
+            System.out.println("This is not a integer. Please enter a Integer!");
+            return getInt();
+        }
     }
 
     public int getInt(int min, int max){
@@ -53,11 +64,22 @@ public class Input {
         return getInt(min, max);
     }
 
+//    public double getDouble(){
+//        System.out.println("Enter a number: ");
+//        double userInput = scanner.nextDouble();
+//        System.out.printf("You entered %f: ", userInput);
+//        return userInput;
+//    }
+
     public double getDouble(){
-        System.out.println("Enter a number: ");
-        double userInput = scanner.nextDouble();
-        System.out.printf("You entered %f: ", userInput);
-        return userInput;
+        System.out.println("Enter a decimal: ");
+        try{
+            return Double.valueOf(this.getString());
+        } catch(NumberFormatException nfe){
+//            nfe.printStackTrace();
+            System.out.println("This is not a decimal. Please enter a decimal!");
+            return getDouble();
+        }
     }
 
     public double getDouble(double min, double max){
