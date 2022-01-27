@@ -35,6 +35,16 @@ public class Input {
         }
     }
 
+    public boolean yesNo(String prompt){
+        System.out.println(prompt);
+        String userInput = scanner.nextLine();
+        if(userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 //    public int getInt(){
 //        System.out.println("Enter a whole number: ");
 //        int userInput = scanner.nextInt();
@@ -44,6 +54,17 @@ public class Input {
 
     public int getInt(){
         System.out.println("Enter a Integer: ");
+        try{
+            return Integer.valueOf(this.getString());
+        } catch(NumberFormatException nfe){
+//            nfe.printStackTrace();
+            System.out.println("This is not a integer. Please enter a Integer!");
+            return getInt();
+        }
+    }
+
+    public int getInt(String prompt){
+        System.out.println(prompt);
         try{
             return Integer.valueOf(this.getString());
         } catch(NumberFormatException nfe){
