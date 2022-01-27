@@ -103,6 +103,17 @@ public class Input {
         }
     }
 
+    public double getDouble(String prompt){
+        System.out.println(prompt);
+        try{
+            return Double.valueOf(this.getString());
+        } catch(NumberFormatException nfe){
+//            nfe.printStackTrace();
+            System.out.println("This is not a decimal. Please enter a decimal!");
+            return getDouble();
+        }
+    }
+
     public double getDouble(double min, double max){
         System.out.printf("Enter a number between %f and %f. %n", min, max);
         double userInput = scanner.nextDouble();
